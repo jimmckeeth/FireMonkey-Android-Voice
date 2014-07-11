@@ -589,7 +589,7 @@
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Android">True</Platform>
+                <Platform value="Android" ActiveMobileDevice="02c22e44f0a687c5">True</Platform>
                 <Platform value="iOSDevice">False</Platform>
                 <Platform value="iOSSimulator" ActiveMobileDevice="iPhone">False</Platform>
                 <Platform value="Win32">False</Platform>

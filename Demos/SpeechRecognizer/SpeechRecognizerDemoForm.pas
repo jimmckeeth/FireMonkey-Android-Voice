@@ -18,8 +18,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnTypeClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure ListView1ItemClick(const Sender: TObject;
-      const AItem: TListViewItem);
+    procedure ListView1ItemClickEx(const Sender: TObject; ItemIndex: Integer;
+      const LocalClickPos: TPointF; const ItemObject: TListItemObject);
   private
     { Private declarations }
     sr : TSpeechRecognition;
@@ -70,21 +70,16 @@ begin
 end;
 
 procedure TForm37.FormShow(Sender: TObject);
-var
-  lvi: TListViewItem;
 begin
-  lvi := ListView1.Items.Add;
-  lvi.Height := 80;
-  lvi.Text := 'Use the type button to add a new line. Use the listen button to ' +
-     'replace all these lines with what it hears you say. Tap a line to say ' +
-     'it.';
+  Add('Double tap to repeat a line.');
   tts.Speak(lvi.Text);
 end;
 
-procedure TForm37.ListView1ItemClick(const Sender: TObject;
-  const AItem: TListViewItem);
+procedure TForm37.ListView1ItemClickEx(const Sender: TObject;
+  ItemIndex: Integer; const LocalClickPos: TPointF;
+  const ItemObject: TListItemObject);
 begin
-  tts.Speak(AItem.Text);
+  tts.Speak(ListView1.Items[ItemIndex].Text);
 end;
 
 procedure TForm37.RecognizeEx(Sender: TObject; Guesses: TGuesses);

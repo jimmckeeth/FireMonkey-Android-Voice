@@ -52,7 +52,7 @@ object Form37: TForm37
     ItemAppearance.ItemHeight = 60
     ItemAppearance.ItemEditHeight = 60
     ItemAppearanceObjects.ItemObjects.Text.WordWrap = True
-    ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
-    OnItemClick = ListView1ItemClick
+    ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Detail
+    OnItemClickEx = ListView1ItemClickEx
   end
 end
