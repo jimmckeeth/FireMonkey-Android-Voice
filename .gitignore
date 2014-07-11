@@ -51,6 +51,9 @@
 __history/
 *.~*
 
+/Demos/SpeechRecognizer/Android
+/Demos/GlassVoiceTrigger/Android
+
 # =========================
 # Operating System Files
 # =========================
@@ -63,8 +66,7 @@ __history/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
-
+Icon
 # Thumbnails
 ._*
 
