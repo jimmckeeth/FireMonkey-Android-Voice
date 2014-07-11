@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<trigger command="TAKE_A_NOTE">
+  <input prompt="What shall I say?" />
+</trigger>

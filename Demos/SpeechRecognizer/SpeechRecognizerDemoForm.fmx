@@ -1,0 +1,58 @@
+object Form37: TForm37
+  Left = 0
+  Top = 0
+  Caption = 'Form37'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMobile = True
+  DesignerWidth = 384
+  DesignerHeight = 592
+  DesignerDeviceName = 'Google Nexus 4'
+  DesignerOrientation = 0
+  DesignerOSVersion = ''
+  object Layout1: TLayout
+    Align = Bottom
+    Height = 72.000000000000000000
+    Position.Y = 495.000000000000000000
+    Width = 384.000000000000000000
+    TabOrder = 2
+    object btnListen: TButton
+      Height = 60.000000000000000000
+      Position.X = 200.000000000000000000
+      Position.Y = 8.000000000000000000
+      TabOrder = 0
+      Text = 'Listen'
+      Width = 128.000000000000000000
+      OnClick = btnListenClick
+    end
+    object btnType: TButton
+      Height = 60.000000000000000000
+      Position.X = 56.000000000000000000
+      Position.Y = 8.000000000000000000
+      TabOrder = 1
+      Text = 'Type'
+      Width = 128.000000000000000000
+      OnClick = btnTypeClick
+    end
+  end
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TListItemAppearance'
+    ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Height = 495.000000000000000000
+    TabOrder = 4
+    Width = 384.000000000000000000
+    ItemAppearance.ItemHeight = 60
+    ItemAppearance.ItemEditHeight = 60
+    ItemAppearanceObjects.ItemObjects.Text.WordWrap = True
+    ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
+    OnItemClick = ListView1ItemClick
+  end
+end
