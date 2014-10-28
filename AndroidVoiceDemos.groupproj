@@ -3,10 +3,25 @@
         <ProjectGuid>{C32D2537-163E-4C37-85B0-80EE1A59D8A2}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
+        <Projects Include="Demos\GlassVoiceTrigger\GlassVoiceTrigger.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="Demos\SpeechRecognizer\SpeechRecognizerDemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Demos\GlassVoiceTrigger\GlassVoiceTrigger.dproj">
+        <Projects Include="Demos\VoiceCommands\VoiceCommands.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AndoridVoiceComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\SpeechRecognizerCpp\SpeechRecognizerCpp.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\VoiceCommandsCpp\VoiceCommandsCpp.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demos\GlassVoiceTriggerCpp\GlassVoiceTriggerCpp.cbproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,15 +32,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="SpeechRecognizerDemo">
-        <MSBuild Projects="Demos\SpeechRecognizer\SpeechRecognizerDemo.dproj"/>
-    </Target>
-    <Target Name="SpeechRecognizerDemo:Clean">
-        <MSBuild Projects="Demos\SpeechRecognizer\SpeechRecognizerDemo.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="SpeechRecognizerDemo:Make">
-        <MSBuild Projects="Demos\SpeechRecognizer\SpeechRecognizerDemo.dproj" Targets="Make"/>
-    </Target>
     <Target Name="GlassVoiceTrigger">
         <MSBuild Projects="Demos\GlassVoiceTrigger\GlassVoiceTrigger.dproj"/>
     </Target>
@@ -35,14 +41,68 @@
     <Target Name="GlassVoiceTrigger:Make">
         <MSBuild Projects="Demos\GlassVoiceTrigger\GlassVoiceTrigger.dproj" Targets="Make"/>
     </Target>
+    <Target Name="SpeechRecognizerDemo">
+        <MSBuild Projects="Demos\SpeechRecognizer\SpeechRecognizerDemo.dproj"/>
+    </Target>
+    <Target Name="SpeechRecognizerDemo:Clean">
+        <MSBuild Projects="Demos\SpeechRecognizer\SpeechRecognizerDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SpeechRecognizerDemo:Make">
+        <MSBuild Projects="Demos\SpeechRecognizer\SpeechRecognizerDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VoiceCommands">
+        <MSBuild Projects="Demos\VoiceCommands\VoiceCommands.dproj"/>
+    </Target>
+    <Target Name="VoiceCommands:Clean">
+        <MSBuild Projects="Demos\VoiceCommands\VoiceCommands.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VoiceCommands:Make">
+        <MSBuild Projects="Demos\VoiceCommands\VoiceCommands.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AndoridVoiceComponents">
+        <MSBuild Projects="AndoridVoiceComponents.dproj"/>
+    </Target>
+    <Target Name="AndoridVoiceComponents:Clean">
+        <MSBuild Projects="AndoridVoiceComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AndoridVoiceComponents:Make">
+        <MSBuild Projects="AndoridVoiceComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SpeechRecognizerCpp">
+        <MSBuild Projects="Demos\SpeechRecognizerCpp\SpeechRecognizerCpp.cbproj"/>
+    </Target>
+    <Target Name="SpeechRecognizerCpp:Clean">
+        <MSBuild Projects="Demos\SpeechRecognizerCpp\SpeechRecognizerCpp.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SpeechRecognizerCpp:Make">
+        <MSBuild Projects="Demos\SpeechRecognizerCpp\SpeechRecognizerCpp.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="VoiceCommandsCpp">
+        <MSBuild Projects="Demos\VoiceCommandsCpp\VoiceCommandsCpp.cbproj"/>
+    </Target>
+    <Target Name="VoiceCommandsCpp:Clean">
+        <MSBuild Projects="Demos\VoiceCommandsCpp\VoiceCommandsCpp.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VoiceCommandsCpp:Make">
+        <MSBuild Projects="Demos\VoiceCommandsCpp\VoiceCommandsCpp.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="GlassVoiceTriggerCpp">
+        <MSBuild Projects="Demos\GlassVoiceTriggerCpp\GlassVoiceTriggerCpp.cbproj"/>
+    </Target>
+    <Target Name="GlassVoiceTriggerCpp:Clean">
+        <MSBuild Projects="Demos\GlassVoiceTriggerCpp\GlassVoiceTriggerCpp.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GlassVoiceTriggerCpp:Make">
+        <MSBuild Projects="Demos\GlassVoiceTriggerCpp\GlassVoiceTriggerCpp.cbproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="SpeechRecognizerDemo;GlassVoiceTrigger"/>
+        <CallTarget Targets="GlassVoiceTrigger;SpeechRecognizerDemo;VoiceCommands;AndoridVoiceComponents;SpeechRecognizerCpp;VoiceCommandsCpp;GlassVoiceTriggerCpp"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="SpeechRecognizerDemo:Clean;GlassVoiceTrigger:Clean"/>
+        <CallTarget Targets="GlassVoiceTrigger:Clean;SpeechRecognizerDemo:Clean;VoiceCommands:Clean;AndoridVoiceComponents:Clean;SpeechRecognizerCpp:Clean;VoiceCommandsCpp:Clean;GlassVoiceTriggerCpp:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="SpeechRecognizerDemo:Make;GlassVoiceTrigger:Make"/>
+        <CallTarget Targets="GlassVoiceTrigger:Make;SpeechRecognizerDemo:Make;VoiceCommands:Make;AndoridVoiceComponents:Make;SpeechRecognizerCpp:Make;VoiceCommandsCpp:Make;GlassVoiceTriggerCpp:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

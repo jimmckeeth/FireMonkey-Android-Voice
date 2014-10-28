@@ -8,9 +8,6 @@
     <!-- This is the platform API where NativeActivity was introduced. -->
     <uses-sdk android:minSdkVersion="%minSdkVersion%" android:targetSdkVersion="%targetSdkVersion%" />
 <%uses-permission%>
-    <!-- Optional permission for unlisted voice command
-    <uses-permission
-      android:name="com.google.android.glass.permission.DEVELOPMENT" />  -->
     <application android:persistent="%persistent%" 
         android:restoreAnyVersion="%restoreAnyVersion%" 
         android:label="%label%" 
@@ -24,19 +21,15 @@
              This will take care of integrating with our NDK code. -->
         <activity android:name="com.embarcadero.firemonkey.FMXNativeActivity"
                 android:label="%activityLabel%"
-                android:configChanges="orientation|keyboardHidden">
+                android:configChanges="orientation|keyboardHidden"
+                android:launchMode="singleTask">
             <!-- Tell NativeActivity the name of our .so -->
             <meta-data android:name="android.app.lib_name"
                 android:value="%libNameValue%" />
             <intent-filter>  
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!-- Voice Trigger on Google Glass -->
-                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
-            </intent-filter>
-            <!-- Meta data for Voice Trigger -->
-            <meta-data android:name="com.google.android.glass.VoiceTrigger"
-               android:resource="@xml/voicetrigger" />
+            </intent-filter> 
         </activity>
         <%activity%>
         <receiver android:name="com.embarcadero.firemonkey.notifications.FMXNotificationAlarm" />

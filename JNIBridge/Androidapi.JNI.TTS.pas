@@ -12,7 +12,10 @@ unit Androidapi.JNI.TTS;
 
 interface
 
-uses Androidapi.JNIBridge,
+{$IFDEF ANDROID}
+
+uses
+  Androidapi.JNIBridge,
   Androidapi.JNI.JavaTypes,
   Androidapi.JNI.Os,
   Androidapi.JNI.App,
@@ -260,6 +263,8 @@ type
     procedure onStart(utteranceID: JString); cdecl;
   end;
   TJUtteranceProgressListener = class(TJavaGenericImport<JUtteranceProgressListenerClass, JUtteranceProgressListener>) end;
+
+{$ENDIF}
 
 implementation
 

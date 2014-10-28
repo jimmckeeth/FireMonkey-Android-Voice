@@ -1,0 +1,62 @@
+object Form8: TForm8
+  Left = 0
+  Top = 0
+  Caption = 'Form8'
+  ClientHeight = 430
+  ClientWidth = 345
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object Button1: TButton
+    Align = Bottom
+    Position.Y = 344.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 86.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Listen'
+    TintColor = claSpringgreen
+    OnClick = Button1Click
+  end
+  object ListBox1: TListBox
+    Align = Top
+    Size.Width = 345.000000000000000000
+    Size.Height = 97.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Columns = 3
+    DisableFocusEffect = True
+    Items.Strings = (
+      'Red'
+      'Green'
+      'Blue'
+      'Yellow'
+      'Orange'
+      'Purple')
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+  end
+  object ListBox2: TListBox
+    Align = Client
+    Size.Width = 345.000000000000000000
+    Size.Height = 247.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+  end
+  object AndroidTTS1: TAndroidTTS
+    Left = 200
+    Top = 56
+  end
+  object SpeechRecognition1: TSpeechRecognition
+    OnRecognitionEx = SpeechRecognition1RecognitionEx
+    OnCommand = SpeechRecognition1Command
+    Left = 88
+    Top = 56
+  end
+end

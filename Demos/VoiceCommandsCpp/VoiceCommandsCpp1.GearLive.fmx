@@ -1,0 +1,17 @@
+inherited Form8_GearLive: TForm8_GearLive
+  ClientHeight = 213
+  ClientWidth = 213
+  DesignerMasterStyle = 3
+  inherited Button1: TButton
+    Position.Y = 176.000000000000000000
+    Size.Width = 213.000000000000000000
+    Size.Height = 37.000000000000000000
+  end
+  inherited ListBox1: TListBox
+    Size.Width = 213.000000000000000000
+  end
+  inherited ListBox2: TListBox
+    Size.Width = 213.000000000000000000
+    Size.Height = 79.000000000000000000
+  end
+end

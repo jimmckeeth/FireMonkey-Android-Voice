@@ -1,0 +1,55 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 462
+  ClientWidth = 342
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object ListBox1: TListBox
+    Align = Client
+    Size.Width = 342.000000000000000000
+    Size.Height = 400.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+  end
+  object Layout1: TLayout
+    Align = Bottom
+    Position.Y = 400.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 62.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    object Button1: TButton
+      Align = Center
+      Padding.Left = 10.000000000000000000
+      Padding.Top = 10.000000000000000000
+      Padding.Right = 10.000000000000000000
+      Padding.Bottom = 10.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 88.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Listen'
+      OnClick = Button1Click
+    end
+  end
+  object SpeechRecognition1: TSpeechRecognition
+    Prompt = 'Your command?'
+    OnRecognitionEx = SpeechRecognition1RecognitionEx
+    OnCommand = SpeechRecognition1Command
+    Left = 160
+    Top = 136
+  end
+end

@@ -51,8 +51,12 @@
 __history/
 *.~*
 
-/Demos/SpeechRecognizer/Android
-/Demos/GlassVoiceTrigger/Android
+*/Debug
+*/Release
+*/*/Debug
+*/*/Release
+*/*/*/Debug
+*/*/*/Release
 
 # =========================
 # Operating System Files

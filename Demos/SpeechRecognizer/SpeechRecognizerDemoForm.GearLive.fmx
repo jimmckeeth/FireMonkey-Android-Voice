@@ -1,0 +1,31 @@
+inherited Form37_GearLive: TForm37_GearLive
+  ClientHeight = 213
+  ClientWidth = 213
+  DesignerMasterStyle = 3
+  inherited Layout1: TLayout
+    Position.Y = 141.000000000000000000
+    Size.Width = 213.000000000000000000
+    inherited Layout2: TLayout
+      inherited btnListen: TButton
+        Align = Center
+      end
+      inherited btnType: TButton
+        Visible = False
+      end
+      inherited btnClear: TButton
+        Visible = False
+      end
+    end
+  end
+  inherited ListView1: TListView
+    Size.Width = 213.000000000000000000
+    Size.Height = 141.000000000000000000
+  end
+  inherited Edit1: TEdit
+    Size.Width = 213.000000000000000000
+    Visible = False
+    inherited Button1: TButton
+      Position.X = 165.000000000000000000
+    end
+  end
+end

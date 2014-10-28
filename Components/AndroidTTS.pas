@@ -3,14 +3,18 @@ unit AndroidTTS;
 interface
 
 uses
-  System.SysUtils, System.Classes, AndroidAPI.JNIBridge, androidapi.JNI.TTS,
-  Androidapi.JNI.JavaTypes, FMX.Forms;
+  System.SysUtils, System.Classes,
+  {$IFDEF ANDROID}
+  AndroidAPI.JNIBridge, androidapi.JNI.TTS,
+  Androidapi.JNI.JavaTypes,
+  {$ENDIF}
+  FMX.Forms;
 
 type
   TAndroidTTS = class(TComponent)
   private
+  {$IFDEF ANDROID}
     ftts: JTextToSpeech;
-
     type
       TttsOnInitListener = class(TJavaLocal, JTextToSpeech_OnInitListener,
         JTextToSpeech_OnUtteranceCompletedListener)
@@ -30,18 +34,21 @@ type
     private
       fttsListener : TttsOnInitListener;
       FDone: TNotifyEvent;
+      procedure Init;
       // Never fires
       // property OnDone: TNotifyEvent read FDone write FDone;
+{$ENDIF}
     public
-      procedure Init;
       constructor Create(AOwner: TComponent); override;
       procedure Speak(say: String);
 
     end;
 
-
+procedure Register;
 
 implementation
+
+{$IFDEF ANDROID}
 
 uses
   FMX.Helpers.Android
@@ -52,20 +59,26 @@ uses
 , Androidapi.JNI.App
 ;
 
+  {$ENDIF}
+
+procedure Register;
+begin
+  RegisterComponents('Android', [TAndroidTTS]);
+end;
+
+
 { TAndroidTTS }
 
 constructor TAndroidTTS.Create(AOwner: TComponent);
 begin
   inherited;
+{$IFDEF ANDROID}
   Init;
-end;
-
-procedure TAndroidTTS.Init;
-begin
-  Ftts := TJTextToSpeech.JavaClass.init(SharedActivityContext, fttsListener);
+{$ENDIF}
 end;
 
 procedure TAndroidTTS.Speak(say: String);
+{$IFDEF ANDROID}
 var
   params: JHashMap;
 begin
@@ -76,6 +89,17 @@ begin
      StringToJString('id'));   }
 
   ftts.speak(StringToJString(say), TJTextToSpeech.JavaClass.QUEUE_FLUSH, params);
+end;
+{$ELSE}
+begin
+
+end;
+{$ENDIF}
+
+{$IFDEF ANDROID}
+procedure TAndroidTTS.Init;
+begin
+  Ftts := TJTextToSpeech.JavaClass.init(SharedActivityContext, fttsListener);
 end;
 
 { TAndroidTTS.TttsOnInitListener }
@@ -92,7 +116,7 @@ var
 begin
   if (status = TJTextToSpeech.JavaClass.SUCCESS) then
   begin
-   result := FParent.ftts.setLanguage(TJLocale.JavaClass.FRENCH);
+   result := FParent.ftts.setLanguage(TJLocale.JavaClass.ENGLISH);
    FParent.ftts.setOnUtteranceCompletedListener(self);
    if (result = TJTextToSpeech.JavaClass.LANG_MISSING_DATA) or
       (result = TJTextToSpeech.JavaClass.LANG_NOT_SUPPORTED) then
@@ -117,5 +141,7 @@ begin
     end;
   end);
 end;
+
+{$ENDIF}
 
 end.

@@ -2,42 +2,54 @@ object Form37: TForm37
   Left = 0
   Top = 0
   Caption = 'Form37'
-  ClientHeight = 567
-  ClientWidth = 384
+  ClientHeight = 495
+  ClientWidth = 383
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  OnCreate = FormCreate
   OnShow = FormShow
-  DesignerMobile = True
-  DesignerWidth = 384
-  DesignerHeight = 592
-  DesignerDeviceName = 'Google Nexus 4'
-  DesignerOrientation = 0
-  DesignerOSVersion = ''
+  DesignerMasterStyle = 3
   object Layout1: TLayout
     Align = Bottom
-    Height = 72.000000000000000000
-    Position.Y = 495.000000000000000000
-    Width = 384.000000000000000000
+    Position.Y = 423.000000000000000000
+    Size.Width = 383.000000000000000000
+    Size.Height = 72.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 2
-    object btnListen: TButton
-      Height = 60.000000000000000000
-      Position.X = 200.000000000000000000
-      Position.Y = 8.000000000000000000
+    object Layout2: TLayout
+      Align = Center
+      Size.Width = 265.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 0
-      Text = 'Listen'
-      Width = 128.000000000000000000
-      OnClick = btnListenClick
-    end
-    object btnType: TButton
-      Height = 60.000000000000000000
-      Position.X = 56.000000000000000000
-      Position.Y = 8.000000000000000000
-      TabOrder = 1
-      Text = 'Type'
-      Width = 128.000000000000000000
-      OnClick = btnTypeClick
+      object btnListen: TButton
+        Align = Right
+        Position.X = 177.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Listen'
+        OnClick = btnListenClick
+      end
+      object btnType: TButton
+        Align = Center
+        Size.Width = 73.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Type'
+        OnClick = btnTypeClick
+      end
+      object btnClear: TButton
+        Align = Left
+        Size.Width = 73.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Clear'
+        OnClick = btnClearClick
+      end
     end
   end
   object ListView1: TListView
@@ -46,13 +58,36 @@ object Form37: TForm37
     HeaderAppearanceClassName = 'TListHeaderObjects'
     FooterAppearanceClassName = 'TListHeaderObjects'
     Align = Client
-    Height = 495.000000000000000000
+    Size.Width = 383.000000000000000000
+    Size.Height = 391.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 4
-    Width = 384.000000000000000000
     ItemAppearance.ItemHeight = 60
     ItemAppearance.ItemEditHeight = 60
     ItemAppearanceObjects.ItemObjects.Text.WordWrap = True
     ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Detail
     OnItemClickEx = ListView1ItemClickEx
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Top
+    TabOrder = 11
+    Size.Width = 383.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    object Button1: TButton
+      Align = Right
+      Position.X = 335.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Go'
+      OnClick = Button1Click
+    end
+  end
+  object AndroidWearViews1: TAndroidWearViews
+    Left = 128
+    Top = 184
   end
 end

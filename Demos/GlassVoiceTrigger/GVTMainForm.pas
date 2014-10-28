@@ -14,16 +14,15 @@ type
   TForm37 = class(TForm)
     StyleBook1: TStyleBook;
     ListBox1: TListBox;
-    procedure FormCreate(Sender: TObject);
+    tts: TAndroidTTS;
+    sr: TSpeechRecognition;
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
-    sr: TSpeechRecognition;
-    tts: TAndroidTTS;
-    procedure RecognizeEx(Sender: TObject; Guesses: TGuesses);
-    procedure Recognize(Sender: TObject; Guess: String);
   public
     { Public declarations }
+    procedure RecognizeEx(Sender: TObject; Guesses: TGuesses);
+    procedure Recognize(Sender: TObject; Guess: String);
   end;
 
 var
@@ -32,6 +31,7 @@ var
 implementation
 
 {$R *.fmx}
+{$R *.GGlass.fmx ANDROID}
 
 uses
   FMX.Helpers.Android
@@ -42,15 +42,6 @@ uses
 , Androidapi.Helpers
 , Androidapi.JNI.App
 ;
-
-procedure TForm37.FormCreate(Sender: TObject);
-begin
-  sr := TSpeechRecognition.Create(nil);
-  sr.OnRecognitionEx := RecognizeEx;
-  sr.OnRecognition := Recognize;
-
-  tts := TAndroidTTS.Create(nil);
-end;
 
 procedure TForm37.FormShow(Sender: TObject);
 var

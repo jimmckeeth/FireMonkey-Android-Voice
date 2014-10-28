@@ -4,6 +4,7 @@ unit android.speech.SpeechRecognizer;
 
 interface
 
+{$IFDEF ANDROID}
 uses
   AndroidAPI.JNIBridge,
   Androidapi.JNI.JavaTypes,
@@ -209,6 +210,8 @@ const
   TJSpeechRecognizerERROR_NO_MATCH = 7;
   TJSpeechRecognizerERROR_RECOGNIZER_BUSY = 8;
   TJSpeechRecognizerERROR_INSUFFICIENT_PERMISSIONS = 9;
+
+{$ENDIF}
 
 implementation
 

@@ -1,0 +1,3 @@
+inherited Form37_GGlass: TForm37_GGlass
+  DesignerMasterStyle = 3
+end

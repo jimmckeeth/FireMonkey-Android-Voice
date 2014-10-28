@@ -1,0 +1,16 @@
+inherited Form6_LgXhdpiPh: TForm6_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited ListBox1: TListBox
+    Size.Width = 450.000000000000000000
+    Size.Height = 633.000000000000000000
+  end
+  inherited Layout1: TLayout
+    Position.Y = 633.000000000000000000
+    Size.Width = 450.000000000000000000
+  end
+  inherited SpeechRecognition1: TSpeechRecognition
+    Top = 80
+  end
+end
