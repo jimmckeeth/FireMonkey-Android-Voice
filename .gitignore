@@ -51,12 +51,9 @@
 __history/
 *.~*
 
-*/Debug
-*/Release
-*/*/Debug
-*/*/Release
-*/*/*/Debug
-*/*/*/Release
+Debug/
+Release/
+
 
 # =========================
 # Operating System Files
